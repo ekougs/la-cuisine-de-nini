@@ -1,4 +1,4 @@
-from la_cuisine_de_nini.data.dishes_provider import get_dishes
+from la_cuisine_de_nini.choice.choice_of_day import get_dishes_of_day
 
 if __name__ == "__main__":
-    print('valid', get_dishes())
+    print('choice of the day', get_dishes_of_day())
