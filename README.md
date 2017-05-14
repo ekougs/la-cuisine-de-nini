@@ -1,7 +1,7 @@
 # La cuisine de Nini
 
 Un outil pour nous aider à générer notre menu hebdomadaire  
-Quand on est une famille de geek  
+Quand on est une famille de geeks...  
 
 ## Préalable
 Python 3.6  
