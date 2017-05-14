@@ -3,8 +3,6 @@ import json
 
 import requests
 
-from la_cuisine_de_nini.data.dishes_domain import DishesSchema
-
 
 class DishesProvider:
     def get(self):
@@ -35,9 +33,6 @@ def _compute_dishes(main_dishes, side_dishes):
 
 def get_dishes(dishes_provider=DishesJsonEditorOnlineProvider()):
     separated_dishes = dishes_provider.get()
-    errors = DishesSchema().validate(separated_dishes)
-    if bool(errors):
-        raise ValueError(f"Dishes retrieved from server are invalid {errors}")
     dishes = separated_dishes["complete_dishes"]
     dishes.extend(_compute_dishes(separated_dishes["main_dishes"], separated_dishes["side_dishes"]))
     return dishes
